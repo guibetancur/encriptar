@@ -1,0 +1,19 @@
+const claves = [["a", "ai"], ["e", "enter"], ["i", "imes"], ["o", "ober"], ["u", "ufat"]]
+const claves = [["a", "ai"], ["e", "enter"], ["i", "imes"], ["o", "ober"], ["u", "ufat"],["A", "AI"], ["E", "ENTER"], ["I", "IMES"], ["O", "OBER"], ["U", "UFAT"]]
+const claves = [["a", "ai"], ["e", "enter"], ["i", "imes"], ["o", "ober"], ["u", "ufat"],["A", "AI"], ["E", "ENTER"], ["I", "IMES"], ["O", "OBER"], ["U", "UFAT"]]
+
+Bienvenidos al Challenge ONE Sprint 01 que es parte de la formación Principiantes de Programación auspiciado por ORACLE en alianza con ALURA.
+Gracias por la oportunidad.
+Guillermo Betancur
+
+Bimesenternventernimesdobers ail Chaillenternieutallaeenter ONE Sprimesnt 01 qufatenter enters pairtenter denter lai foberrmaicimesón Primesncimespimesaintenters denter Proberieutallaeraimaicimesón aiufatspimescimesaidober poberr ORACLE entern ailimesainzai cobern ALURA.
+Graicimesais poberr lai oberpoberrtufatnimesdaid.
+Gufatimesllenterrmober Bentertaincufatr
+
+
+const json = '{ "nombre": "Juan", "edad": 30 }';
+
+const objeto = JSON.parse(json);
+
+console.log(objeto.nombre); // "Juan"
+console.log(objeto.edad); // 30

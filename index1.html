@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encriptador/Desencriptador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <label for="text">Texto:</label>
+  <textarea id="text" placeholder="Ingrese texto"></textarea>
+
+  <label for="option">Seleccione la opción:</label>
+  <select id="option">
+    <option value="encrypt">Encriptar</option>
+    <option value="decrypt">Desencriptar</option>
+  </select>
+
+  <button onclick="processText()">Procesar</button>
+
+  <label for="result">Resultado:</label>
+  <textarea id="result" readonly></textarea>
+
+  <button onclick="copyToClipboard()">Copiar al portapapeles</button>
+
+  <script>
+    function processText() {
+      const text = document.getElementById('text').value.toLowerCase();
+      const option = document.getElementById('option').value;
+      let result = '';
+
+      for (let i = 0; i < text.length; i++) {
+        switch (text[i]) {
+          case 'e':
+            result += option === 'encrypt' ? 'enter' : 'e';
+            break;
+          case 'i':
+            result += option === 'encrypt' ? 'imes' : 'i';
+            break;
+          case 'a':
+            result += option === 'encrypt' ? 'ai' : 'a';
+            break;
+          case 'o':
+            result += option === 'encrypt' ? 'ober' : 'o';
+            break;
+          case 'u':
+            result += option === 'encrypt' ? 'ufat' : 'u';
+            break;
+          default:
+            result += text[i];
+        }
+      }
+
+      document.getElementById('result').value = result;
+    }
+
+    function copyToClipboard() {
+      const resultTextarea = document.getElementById('result');
+      resultTextarea.select();
+      document.execCommand('copy');
+      alert('Texto copiado al portapapeles');
+    }
+  </script>
+</body>
+</html>

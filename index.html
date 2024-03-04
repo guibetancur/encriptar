@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encriptador/Desencriptador</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="contenedor">
+    <div id="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="120" height="48" viewBox="0 0 120 48" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M67.3958 23.6529C67.3524 23.9311 67.2466 24.1959 67.0863 24.4275C66.926 24.659 66.7154 24.8512 66.4703 24.9898C65.9766 25.3086 65.5447 25.468 65.1077 25.6274C64.177 25.9488 63.1974 26.2702 62.1613 26.643C61.0687 27.0157 60.0891 27.3885 59.215 27.6585C58.1249 28.0313 57.0888 28.3526 56.1041 28.7254C55.3633 29.0425 54.6674 29.4556 54.0345 29.9544C53.4458 30.4877 52.9321 31.0983 52.5073 31.7695C52.0703 32.515 51.7952 33.4766 51.7952 34.5975C51.7952 36.842 52.3402 38.5491 53.4329 39.6161C54.523 40.7396 56.5438 41.2718 59.5389 41.2718C62.5933 41.2718 64.6655 40.6856 65.7607 39.5107C66.8482 38.3357 67.3932 36.6826 67.3932 34.5487V23.6529H67.3958ZM59.5415 0C64.8891 0 68.815 1.01553 71.3217 3.09802C73.831 5.12908 75.0856 7.74119 75.0856 10.8366V37.2148C75.0856 38.2817 74.8696 39.4567 74.4891 40.737C74.1035 42.0225 73.3425 43.1949 72.1418 44.2592C70.9977 45.3313 69.4166 46.2389 67.3984 46.933C65.3802 47.6272 62.7629 48 59.5441 48C56.3304 48 53.708 47.6272 51.6923 46.933C49.6767 46.2389 48.093 45.3313 46.9489 44.2592C45.8846 43.3001 45.0783 42.089 44.6042 40.737C44.2185 39.4592 44 38.2843 44 37.2174V33.001C44 30.7565 44.599 28.674 45.7997 26.8563C47.0003 24.9898 48.6894 23.7095 50.8722 22.9073C51.9623 22.5345 53.2169 22.1618 54.6335 21.681C56.0527 21.1976 57.3588 20.7169 58.6699 20.2927C59.9811 19.8633 61.1252 19.434 62.1048 19.0586C62.6959 18.8221 63.2963 18.6094 63.9044 18.421L64.8866 17.9402C65.2722 17.7268 65.6501 17.4055 66.0332 16.9787C66.4137 16.5545 66.7402 16.0737 67.0153 15.5389C67.306 14.9599 67.4557 14.3203 67.4524 13.6724V11.9627C67.4564 11.3361 67.3249 10.716 67.0667 10.145C66.8508 9.5023 66.4137 8.91612 65.8147 8.38393C65.2156 7.84917 64.3955 7.42239 63.416 7.09845C62.4338 6.78222 61.1278 6.62025 59.6521 6.62025C56.5977 6.62025 54.5795 7.21157 53.4894 8.43535C52.5639 9.50488 52.0189 10.8392 51.9109 12.3329C51.9109 12.6543 51.6383 12.8677 51.3093 12.8677L44.6582 12.9757C44.5002 12.9764 44.3483 12.9146 44.2356 12.8039C44.123 12.6931 44.0586 12.5423 44.0566 12.3844V10.8418C44.0566 9.3429 44.3317 7.95458 44.9307 6.62025C45.5323 5.28334 46.4604 4.16497 47.7125 3.20086C48.9671 2.24189 50.6048 1.44231 52.5665 0.907552C54.4767 0.26481 56.8214 0 59.5466 0H59.5415Z" fill="#0A3871"/>
+      </svg>
+      <label for="cifrado">Tipo de encriptación</label>
+      <!-- <select onchange="if (this.selectedIndex) obtenerCifradoPorId(this.value)" name="cifrado" id="cifrado"> -->
+      <select onchange="obtenerCifradoPorId(this.value)" name="cifrado" id="cifrado">
+        <option value="1">Alura</option>
+        <option value="2">Guillermo</option>
+        <option value="3">Símbolos</option>
+      </select>
+    </div>
+    <div class="panel">
+      <div class="titulo">
+        <label for="text">Texto Legible:</label>
+        <!-- <h1>Texto Legible:</h1> -->
+        <button id="copy1" onclick="copyToClipboard(1)" disabled class="flex gap-1 items-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 4C10.8954 4 10 4.89543 10 6H14C14 4.89543 13.1046 4 12 4ZM8.53513 4C9.22675 2.8044 10.5194 2 12 2C13.4806 2 14.7733 2.8044 15.4649 4H17C18.6569 4 20 5.34315 20 7V19C20 20.6569 18.6569 22 17 22H7C5.34315 22 4 20.6569 4 19V7C4 5.34315 5.34315 4 7 4H8.53513ZM8 6H7C6.44772 6 6 6.44772 6 7V19C6 19.5523 6.44772 20 7 20H17C17.5523 20 18 19.5523 18 19V7C18 6.44772 17.5523 6 17 6H16C16 7.10457 15.1046 8 14 8H10C8.89543 8 8 7.10457 8 6Z"
+              fill="currentColor"></path>
+          </svg>Copiar texto</button>
+      </div>
+
+      <!-- <div class="textarea-container"> -->
+        <textarea autofocus id="text" class="custom-textarea1" placeholder="Escribe acá el texto que deseas ENCRIPTAR..."></textarea>
+        <!-- <img class="textarea-background1" src="./noText.svg" alt="Imagen de fondo"> -->
+        <img class="textarea-background1" src="./cipher.png" alt="Imagen de fondo">
+        <h4 id="caption1">Nada para ENCRIPTAR</h4>
+        <!-- </div> -->
+        
+        <!-- <textarea placeholder="Escriba acá el texto que desee encriptar"></textarea> -->
+        <!-- https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references -->
+        <button class="encDecBtn" onclick="processText()" id="encryptBtn" disabled>&Downarrow; Encriptar &Downarrow;</button>
+      </div>
+      <!-- <hr>  iconfinder.com-->
+    <div class="panel">
+      <div class="titulo">
+        <label for="result">Texto encriptado:</label>
+        <button id="copy2" onclick="copyToClipboard(2)" disabled class="flex gap-1 items-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M12 4C10.8954 4 10 4.89543 10 6H14C14 4.89543 13.1046 4 12 4ZM8.53513 4C9.22675 2.8044 10.5194 2 12 2C13.4806 2 14.7733 2.8044 15.4649 4H17C18.6569 4 20 5.34315 20 7V19C20 20.6569 18.6569 22 17 22H7C5.34315 22 4 20.6569 4 19V7C4 5.34315 5.34315 4 7 4H8.53513ZM8 6H7C6.44772 6 6 6.44772 6 7V19C6 19.5523 6.44772 20 7 20H17C17.5523 20 18 19.5523 18 19V7C18 6.44772 17.5523 6 17 6H16C16 7.10457 15.1046 8 14 8H10C8.89543 8 8 7.10457 8 6Z"
+          fill="currentColor"></path>
+        </svg>Copiar texto</button>
+      </div>
+      <textarea id="result" class="custom-textarea2" placeholder="Escribe acá el texto que deseas DESENCRIPTAR..."></textarea>
+      <!-- <img class="textarea-background2" src="./noText.svg" alt="Imagen de fondo"> -->
+      <img class="textarea-background2" src="./cipher.png" alt="Imagen de fondo">
+      <h4 id="caption2">Nada para DESENCRIPTAR</h4>
+    <!-- <textarea id="result" placeholder="Escribe acá el texto que deseas desencriptar..."></textarea> -->
+      <button class="encDecBtn" onclick="decryptText()" id="decryptBtn" disabled>&Uparrow; Desencriptar &Uparrow;</button>
+      <!-- <img src="./noText.svg" alt="NoText"> -->
+      <!-- <button onclick="copyToClipboard()">Copiar al portapapeles</button> -->
+    </div>
+  </div>
+
+  <script src="js.js"></script>
+</body>
+
+</html>

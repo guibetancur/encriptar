@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "alura",
+    "cifrado": [["a", "ai"], ["e", "enter"], ["i", "imes"], ["o", "ober"], ["u", "ufat"]]
+  },
+  { 
+    "id": 2,
+    "name": "guillermo",
+    "cifrado": [["a", "ai"], ["e", "enter"], ["i", "imes"], ["o", "ober"], ["u", "ufat"],["A", "AI"], ["E", "ENTER"], ["I", "IMES"], ["O", "OBER"], ["U", "UFAT"]]
+  }, 
+  {
+    "id": 3,
+    "name": "simbolos",
+    "cifrado": [["a", "ai"], ["e", "enter"], ["i", "imes"], ["o", "ober"], ["u", "ufat"],["A", "AI"], ["E", "ENTER"], ["I", "IMES"], ["O", "OBER"], ["U", "UFAT"]]
+  }
+]

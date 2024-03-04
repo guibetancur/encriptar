@@ -1,0 +1,159 @@
+body {
+  background: var(--Light-blue-light-blue-100, #F3F5FC);
+}
+
+#contenedor {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-grow: 1;
+  height: 98vh;
+  padding: 15px;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 40%;
+  /* border: aquamarine solid .5rem; */
+  border-radius: 20px;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  border-radius: 10px 10px 0 0;
+}
+
+label {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+textarea {
+  background: transparent;
+  color: #0A3871;
+  resize: none;
+  border: 0 none;
+  font-size: 2em;
+  outline: none;
+  flex-grow: 1;
+  max-height: 80%;
+}
+
+textarea::placeholder {
+  /* background-image: url(./noText.svg); */
+  color: #7ea8db;
+  /* background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-position: 1rem center; */
+}
+
+.encDecBtn {
+  cursor: pointer;
+  border-radius: 24px;
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border: 1px solid var(--Dark-blue-dark-blue-300, #0A3871);
+}
+
+.encDecBtn:disabled {
+  cursor:auto;
+}
+
+#encryptBtn {
+  background: var(--Dark-blue-dark-blue-300, #0A3871);
+  color: var(--White, #FFF);
+}
+
+#encryptBtn:disabled {
+  background-color: gray;
+}
+
+#decryptBtn {
+  background: #D8DFE8;
+  color: var(--Dark-blue-dark-blue-300, #0A3871);
+}
+
+#decryptBtn:disabled {
+  background-color: gray;
+}
+
+.gap-1 {
+  gap: 0.25rem
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+#logo {
+  margin-top: 2rem;
+  width: 10%;
+}
+
+/* Estilo para el contenedor del textarea */
+.textarea-container {
+  position: relative;
+}
+
+/* Estilo para el textarea */
+.custom-textarea {
+  /* width: 300px;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px; */
+  resize: none;
+  /* Evita que el usuario redimensione el textarea */
+}
+
+/* Estilo para la imagen de fondo */
+.textarea-background {
+  /* position: absolute; */
+  background: transparent;
+  color: #0A3871;
+  resize: none;
+  border: 0 none;
+  /* font-size: 2em; */
+  outline: none;
+  flex-grow: 1;
+  max-height: 80%;
+
+  /* top: 10px;
+  left: 10px; */
+  pointer-events: none;
+  /* Evita que la imagen interfiera con la interacción del usuario en el textarea */
+}
+
+/* Clase para ocultar la imagen cuando hay contenido en el textarea */
+.hide-background {
+  opacity: 0;
+}
+
+h4 {
+  align-self: stretch;
+
+  color: var(--Gray-gray-500, #343A40);
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 28.8px */
+}
