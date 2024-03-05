@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (textarea2.value.length > 0) {
       background2.classList.add('hide-background');
       caption2.classList.add('hide-background')
+      btn2.disabled = false
       copy2.disabled=false
     } else {
       background2.classList.remove('hide-background');
